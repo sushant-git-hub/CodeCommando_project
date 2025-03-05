@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  color: white;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes subtitleReveal {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-background {
+  width: 100%;
+  background: linear-gradient(
+    -45deg, 
+    #5f4e65, 
+    #8e44ad, 
+    #15021c, 
+    #69328b
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  padding: 100px 0;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: white;
+  text-align: center;
+}
+
+.about-header {
+  margin-bottom: 50px;
+}
+
+.about-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0;
+  animation: subtitleReveal 1.5s forwards 0.5s;
+}
+
+.about-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.about-card {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  transform: perspective(1000px);
+}
+
+.about-card:hover {
+  transform: scale(1.05) perspective(1000px) rotateX(10deg);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.about-description {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.explore-btn {
+  padding: 15px 30px;
+  background-color: white;
+  color: #6c3483;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.explore-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .about-grid {
+    flex-direction: column;
+  }
+
+  .about-card {
+    margin: 15px 0;
+  }
+}
