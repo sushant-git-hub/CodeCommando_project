@@ -165,10 +165,10 @@ const Form = () => {
             </option>
             <option value="retail">Retail</option>
             <option value="restaurant">Restaurant</option>
-            <option value="service">Service</option>
+            <option value="service">pharamacy</option>
             <option value="grocery">Grocery</option>
             <option value="electronics">Electronics</option>
-            <option value="other">Other</option>
+            <option value="other">jwelry</option>
           </select>
           {formData.storeType === "other" && (
             <div className="mt-2">
